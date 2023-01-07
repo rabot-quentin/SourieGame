@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI; 
-
-public class IAcontroller : MonoBehaviour
+using UnityEngine.AI;
+public class EnemyAI : MonoBehaviour
 {
     NavMeshAgent agent;
     public Transform[] waypoints;
@@ -13,28 +12,37 @@ public class IAcontroller : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        UpdateDestination(); 
+        UpdateDestination();
+       
     }
+
+    
     void Update()
     {
-        if(Vector3.Distance(transform.position, target) < 1 )
+      
+        if (Vector3.Distance(transform.position, target) < 1)
         {
             IterateWaypointIndex();
-            UpdateDestination(); 
+            UpdateDestination();
+            Debug.Log("ma bite sa marche"); 
         }
     }
     void UpdateDestination()
     {
         target = waypoints[waypointIndex].position;
         agent.SetDestination(target);
+        Debug.Log("on choisi la cible");
+       
+       
     }
     void IterateWaypointIndex()
     {
-        waypointIndex++; 
-        if(waypointIndex == waypoints.Length)
+        waypointIndex += 1 ;
+        if (waypointIndex == waypoints.Length)
         {
-            waypointIndex = 0; 
+            waypointIndex = 0;
+            Debug.Log("on recomence le tour"); 
+
         }
     }
-
 }
