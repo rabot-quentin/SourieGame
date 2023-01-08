@@ -11,7 +11,7 @@ public class EnemyAI : MonoBehaviour
     int waypointIndex;
     Vector3 target;
 
-    public bool TargetPlayer;
+ 
     public bool Patrol;
 
     //Partie qui traque le joueur 
@@ -24,7 +24,7 @@ public class EnemyAI : MonoBehaviour
 
     void Start()
     {
-        TargetPlayer = false;
+      
         Patrol = true; 
         agent = GetComponent<NavMeshAgent>();
         UpdateDestination();       
