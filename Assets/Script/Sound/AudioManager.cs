@@ -26,7 +26,7 @@ public class AudioManager : MonoBehaviour
     }
     private void Start()
     {
-        PlayMusic("Ambiance");
+        PlayMusic("Music");
     }
 
     //partie pour lire les son permanant 

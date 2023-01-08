@@ -23,6 +23,7 @@ public class Hit_Control : MonoBehaviour
         {
             if (CanAttack)
             {
+                AudioManager.Instance.PlaySFX("Hit sound");
                 handAttack();
             }
         }
