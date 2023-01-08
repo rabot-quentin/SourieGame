@@ -16,7 +16,8 @@ public class Deplacement : MonoBehaviour
 
     private void Start()
     {
-       // rb = GetComponent<Rigidbody>();
+        // rb = GetComponent<Rigidbody>();
+        controller = GetComponent<CharacterController>();
     }
 
 
