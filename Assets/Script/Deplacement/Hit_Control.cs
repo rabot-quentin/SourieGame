@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Hit_Control : MonoBehaviour
 {
@@ -10,12 +11,19 @@ public class Hit_Control : MonoBehaviour
     public bool CanAttack = true;
     public float AttackCooldown = 1.0f;
 
-    public Image dent; 
+    public GameObject Kevin;
+    public int score;
+    public TextMeshProUGUI scoreUI;
+    
+    public Image dent;
+
+
 
     private void Start()
     {
         handCollider.gameObject.SetActive(false);
         dent.gameObject.SetActive(false);
+
     }
     void Update()
     {
@@ -23,7 +31,7 @@ public class Hit_Control : MonoBehaviour
         {
             if (CanAttack)
             {
-                AudioManager.Instance.PlaySFX("Hit sound");
+               // AudioManager.Instance.PlaySFX("Hit sound");
                 handAttack();
             }
         }
@@ -37,8 +45,9 @@ public class Hit_Control : MonoBehaviour
         StartCoroutine(ResetAttackCooldown());
         Debug.Log("Coup de point");
         handCollider.gameObject.SetActive(true);
-        dent.gameObject.SetActive(true);
+       
     }
+
 
     IEnumerator ResetAttackCooldown ()
     {
@@ -46,6 +55,18 @@ public class Hit_Control : MonoBehaviour
         CanAttack = true;
         handCollider.gameObject.SetActive(false);
         dent.gameObject.SetActive(false);
+
+    }
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Kevin")
+        {
+            
+            Debug.Log("+1 dent");
+            dent.gameObject.SetActive(true);
+            score++;
+            Destroy(Kevin.gameObject);
+        }
     }
 
 }
