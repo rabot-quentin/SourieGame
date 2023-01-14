@@ -289,6 +289,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: marche_et_chute_TTK
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 94b47b8ba35524948b5c229e15f9ed19,
+        type: 3}
+      propertyPath: m_TagString
+      value: Kevin
+      objectReference: {fileID: 0}
     - target: {fileID: 1415415832911334504, guid: 94b47b8ba35524948b5c229e15f9ed19,
         type: 3}
       propertyPath: m_Materials.Array.data[0]

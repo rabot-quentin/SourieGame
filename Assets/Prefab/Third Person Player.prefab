@@ -622,6 +622,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: JC_05
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 58de675d92ded0a4fb24d898eeafcbb2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 3958125072597028671, guid: 58de675d92ded0a4fb24d898eeafcbb2,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -715,14 +720,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aaa10784e302da478569e2141248f74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hand: {fileID: 4160025277433199255}
   handCollider: {fileID: 7679399889786164168}
   CanAttack: 1
   AttackCooldown: 1
   Kevin: {fileID: 0}
   score: 0
-  scoreUI: {fileID: 0}
-  dent: {fileID: 0}
 --- !u!114 &8288573210474138563
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ using TMPro;
 
 public class Hit_Control : MonoBehaviour
 {
-    public GameObject hand;
+    
     public GameObject handCollider; 
     public bool CanAttack = true;
     public float AttackCooldown = 1.0f;
@@ -15,14 +15,15 @@ public class Hit_Control : MonoBehaviour
     public int score;
     public TextMeshProUGUI scoreUI;
     
-    public Image dent;
+  // public Image dent;
 
 
 
     private void Start()
     {
         handCollider.gameObject.SetActive(false);
-        dent.gameObject.SetActive(false);
+        CanAttack = true;
+        //dent.gameObject.SetActive(false);
 
     }
     void Update()
@@ -54,16 +55,15 @@ public class Hit_Control : MonoBehaviour
         yield return new WaitForSeconds(AttackCooldown);
         CanAttack = true;
         handCollider.gameObject.SetActive(false);
-        dent.gameObject.SetActive(false);
+        //dent.gameObject.SetActive(false);
 
     }
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Kevin")
         {
-            
             Debug.Log("+1 dent");
-            dent.gameObject.SetActive(true);
+          //dent.gameObject.SetActive(true);
             score++;
             Destroy(Kevin.gameObject);
         }
